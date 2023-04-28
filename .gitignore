@@ -1,0 +1,7 @@
+# macOS Specific ignores
+**/.DS_Store
+
+# Windows Specific ignores
+
+# Godot 4+ specific ignores
+.godot/

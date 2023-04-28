@@ -1,0 +1,36 @@
+{
+    // white space settings to reduce file size
+    "editor.insertSpaces": false,
+    "editor.trimAutoWhitespace": true,
+    "editor.renderFinalNewline": "on",
+    "editor.renderWhitespace": "selection",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+    },
+    // language overrides
+    "[gdscript]": {
+        "editor.tabSize": 4,
+        "editor.rulers": [
+            {
+                "color": "#8d8d8dcd",
+                "column": 119
+            },
+            {
+                "color": "#8d8d8dcd",
+                "column": 99
+            }
+        ]
+    },
+    "godot_tools.gdscript_lsp_server_host": "127.0.0.1",
+    "godot_tools.gdscript_lsp_server_port": 6005,
+    "godot_tools.gdscript_lsp_server_protocol": "tcp"
+}
