@@ -1,0 +1,222 @@
+[gd_scene load_steps=19 format=3 uid="uid://cbarvm45jj6tv"]
+
+[ext_resource type="PackedScene" uid="uid://bdic4jdcvkfyg" path="res://Scenes/Player/player.tscn" id="1_7q53d"]
+[ext_resource type="PackedScene" uid="uid://bvk07cbmsnloj" path="res://Assets/FantasyTown/stallRed.glb" id="2_1i865"]
+[ext_resource type="PackedScene" uid="uid://qroxl5h1f4yj" path="res://Assets/FantasyTown/tree.glb" id="2_e70nm"]
+[ext_resource type="PackedScene" uid="uid://xjo0ckhparuq" path="res://Assets/FantasyTown/rockWide.glb" id="3_k0n4c"]
+[ext_resource type="PackedScene" uid="uid://dqop33x50uiim" path="res://Assets/FantasyTown/treeCrooked.glb" id="3_qk62b"]
+[ext_resource type="PackedScene" uid="uid://dhenxiol8nomk" path="res://Assets/FantasyTown/treeHigh.glb" id="4_jv8pd"]
+[ext_resource type="PackedScene" uid="uid://drag1fc1hi6jg" path="res://Assets/FantasyTown/treeHighCrooked.glb" id="5_8sb07"]
+[ext_resource type="PackedScene" uid="uid://cvjvk2njt5v65" path="res://Assets/FoodKit/apple.glb" id="8_myfwa"]
+[ext_resource type="PackedScene" uid="uid://b78v4sakjjwpy" path="res://Assets/FoodKit/beet.glb" id="9_y6p38"]
+[ext_resource type="PackedScene" uid="uid://c5b0mtr5ek0uv" path="res://Assets/FoodKit/appleHalf.glb" id="10_16pll"]
+[ext_resource type="PackedScene" uid="uid://olbkcxfhuw7i" path="res://Assets/BlockyCharacters/Models/Non-rigged/glTF/advancedCharacter.gltf" id="11_jesw1"]
+[ext_resource type="Texture2D" uid="uid://p2fdm2dggs5g" path="res://Assets/BlockyCharacters/Skins/Advanced/skin_man.png" id="12_6uebr"]
+
+[sub_resource type="Environment" id="Environment_mx3w8"]
+ambient_light_color = Color(1, 1, 0.952941, 1)
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0083
+volumetric_fog_emission = Color(0.760784, 0.835294, 0.878431, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vineh"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rn6r3"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tvneg"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1he1"]
+albedo_texture = ExtResource("12_6uebr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8od8"]
+albedo_texture = ExtResource("12_6uebr")
+
+[node name="Main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mx3w8")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.94389, 0.267102, -0.194238, -0.0100417, 0.564654, 0.825267, 0.330108, 0.780911, -0.530289, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_vineh")
+
+[node name="Mountains" type="Node" parent="."]
+
+[node name="rockWide" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(3.67767, 0, 1.57314, 0, 4, 0, -1.57314, 0, 3.67767, -9.49799, -2.38419e-07, 7.97993)
+
+[node name="rockWide2" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-2.50729, 0, 3.11665, 0, 4, 0, -3.11665, 0, -2.50729, -10.0177, -2.38419e-07, 5.2215)
+
+[node name="rockWide17" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-1.22092, 0, 3.80911, 0, 4, 0, -3.80911, 0, -1.22092, 4.47574, -2.38419e-07, 10.7233)
+
+[node name="rockWide18" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-3.33828, 0, -2.20361, 0, 4, 0, 2.20361, 0, -3.33828, 1.6807, -2.38419e-07, 10.9818)
+
+[node name="rockWide19" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-1.22092, 0, 3.80911, 0, 4, 0, -3.80911, 0, -1.22092, -3.00914, -2.38419e-07, 10.2705)
+
+[node name="rockWide20" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-3.33828, 0, -2.20361, 0, 4, 0, 2.20361, 0, -3.33828, -5.80418, -2.38419e-07, 10.529)
+
+[node name="rockWide3" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-1.74105, 0, -3.60121, 0, 4, 0, 3.60121, 0, -1.74105, -11.2703, -2.38419e-07, -0.799294)
+
+[node name="rockWide4" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(3.93746, 0, -0.704559, 0, 4, 0, 0.704559, 0, 3.93746, -9.06712, -2.38419e-07, 0.940026)
+
+[node name="rockWide5" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-3.79338, 0, -1.26895, 0, 4, 0, 1.26895, 0, -3.79338, -10.4807, 3.57628e-06, -5.71291)
+
+[node name="rockWide6" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(2.24562, 0, -3.31017, 0, 4, 0, 3.31017, 0, 2.24562, -10.1869, 3.57628e-06, -2.92135)
+
+[node name="rockWide7" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(3.29266, 0, -2.2712, 0, 4, 0, 2.2712, 0, 3.29266, -9.26444, 3.57628e-06, -7.6946)
+
+[node name="rockWide8" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(1.29831, 0, 3.78344, 0, 4, 0, -3.78344, 0, 1.29831, -7.20871, 3.57628e-06, -9.60591)
+
+[node name="rockWide9" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(1.59288, 0, 3.66916, 0, 4, 0, -3.66916, 0, 1.59288, 1.69844, 3.57628e-06, -10.0671)
+
+[node name="rockWide10" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-1.06357, 0, -3.85601, 0, 4, 0, 3.85601, 0, -1.06357, -2.35249, 3.57628e-06, -9.32198)
+
+[node name="rockWide13" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-3.90172, 0, 0.881224, 0, 4, 0, -0.881224, 0, -3.90172, 9.51065, 3.57628e-06, -2.85765)
+
+[node name="rockWide14" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(3.98666, 0, -0.326363, 0, 4, 0, 0.326363, 0, 3.98666, 10.9976, 3.57628e-06, 0.983466)
+
+[node name="rockWide15" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-3.41012, 0, 2.09071, 0, 4, 0, -2.09071, 0, -3.41012, 9.79479, 3.57628e-06, 4.67865)
+
+[node name="rockWide16" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(2.17481, 0, -3.35711, 0, 4, 0, 3.35711, 0, 2.17481, 8.86772, 3.57628e-06, 8.82169)
+
+[node name="rockWide11" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(3.9345, 0, 0.720909, 0, 4, 0, -0.720909, 0, 3.9345, 9.20569, 5.48363e-06, -7.79866)
+
+[node name="rockWide12" parent="Mountains" instance=ExtResource("3_k0n4c")]
+transform = Transform3D(-1.06357, 0, -3.85601, 0, 4, 0, 3.85601, 0, -1.06357, 5.88578, 5.48363e-06, -9.18447)
+
+[node name="Forest" type="Node" parent="."]
+
+[node name="tree" parent="Forest" instance=ExtResource("2_e70nm")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 5.99735, 0, 6.63148)
+
+[node name="treeCrooked" parent="Forest" instance=ExtResource("3_qk62b")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.11565, 2.38419e-07, 3.65066)
+
+[node name="treeHigh" parent="Forest" instance=ExtResource("4_jv8pd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 6.71049, 0, 5.09292)
+
+[node name="treeHighCrooked" parent="Forest" instance=ExtResource("5_8sb07")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 7.90893, 0, 4.37654)
+
+[node name="tree2" parent="Forest" instance=ExtResource("2_e70nm")]
+transform = Transform3D(1.00455, 0, -1.11395, 0, 1.5, 0, 1.11395, 0, 1.00455, 2.55281, 0, 7.53697)
+
+[node name="treeCrooked2" parent="Forest" instance=ExtResource("3_qk62b")]
+transform = Transform3D(1.00455, 0, -1.11395, 0, 1.5, 0, 1.11395, 0, 1.00455, 4.84569, 2.38419e-07, 5.62857)
+
+[node name="treeHigh2" parent="Forest" instance=ExtResource("4_jv8pd")]
+transform = Transform3D(1.00455, 0, -1.11395, 0, 1.5, 0, 1.11395, 0, 1.00455, 4.17298, 0, 7.0362)
+
+[node name="treeHighCrooked2" parent="Forest" instance=ExtResource("5_8sb07")]
+transform = Transform3D(1.00455, 0, -1.11395, 0, 1.5, 0, 1.11395, 0, 1.00455, 5.50759, 0, 7.44644)
+
+[node name="tree3" parent="Forest" instance=ExtResource("2_e70nm")]
+transform = Transform3D(0.544462, 0, 1.3977, 0, 1.5, 0, -1.3977, 0, 0.544462, 7.15569, -4.76837e-07, -4.28085)
+
+[node name="treeCrooked3" parent="Forest" instance=ExtResource("3_qk62b")]
+transform = Transform3D(0.544462, 0, 1.3977, 0, 1.5, 0, -1.3977, 0, 0.544462, 4.42111, -2.38419e-07, -5.47305)
+
+[node name="treeHigh3" parent="Forest" instance=ExtResource("4_jv8pd")]
+transform = Transform3D(0.544462, 0, 1.3977, 0, 1.5, 0, -1.3977, 0, 0.544462, 5.98092, -4.76837e-07, -5.50382)
+
+[node name="treeHighCrooked3" parent="Forest" instance=ExtResource("5_8sb07")]
+transform = Transform3D(0.544462, 0, 1.3977, 0, 1.5, 0, -1.3977, 0, 0.544462, 5.7484, -4.76837e-07, -6.88055)
+
+[node name="tree4" parent="Forest" instance=ExtResource("2_e70nm")]
+transform = Transform3D(1.4026, 0, 0.531706, 0, 1.5, 0, -0.531706, 0, 1.4026, 6.74915, -4.76837e-07, -0.742562)
+
+[node name="treeCrooked4" parent="Forest" instance=ExtResource("3_qk62b")]
+transform = Transform3D(1.4026, 0, 0.531706, 0, 1.5, 0, -0.531706, 0, 1.4026, 5.80316, -2.38419e-07, -3.57177)
+
+[node name="treeHigh4" parent="Forest" instance=ExtResource("4_jv8pd")]
+transform = Transform3D(1.4026, 0, 0.531706, 0, 1.5, 0, -0.531706, 0, 1.4026, 6.87062, -4.76837e-07, -2.434)
+
+[node name="treeHighCrooked4" parent="Forest" instance=ExtResource("5_8sb07")]
+transform = Transform3D(1.4026, 0, 0.531706, 0, 1.5, 0, -0.531706, 0, 1.4026, 7.7373, -4.76837e-07, -3.52868)
+
+[node name="ComparisonCube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93556, 0.5, 4.05873)
+mesh = SubResource("BoxMesh_rn6r3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ComparisonCube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ComparisonCube/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tvneg")
+
+[node name="stallRed" parent="." instance=ExtResource("2_1i865")]
+transform = Transform3D(0.700548, 0, -0.713605, 0, 1, 0, 0.713605, 0, 0.700548, -4.65719, 0, -4.43403)
+
+[node name="apple" parent="stallRed" instance=ExtResource("8_myfwa")]
+transform = Transform3D(0.85115, 0, 0.524922, 0, 1, 0, -0.524922, 0, 0.85115, 0.0752726, 0.9138, 0.670171)
+
+[node name="apple2" parent="stallRed" instance=ExtResource("8_myfwa")]
+transform = Transform3D(0.85115, 0, 0.524922, 0, 1, 0, -0.524922, 0, 0.85115, -0.137215, 0.9138, 0.615725)
+
+[node name="apple3" parent="stallRed" instance=ExtResource("8_myfwa")]
+transform = Transform3D(0.85115, 0, 0.524922, 0, 1, 0, -0.524922, 0, 0.85115, 0.0566621, 0.9138, 0.461531)
+
+[node name="appleHalf" parent="stallRed" instance=ExtResource("10_16pll")]
+transform = Transform3D(0.121228, -0.741594, 0.659805, -0.986901, -0.161328, 0, 0.106445, -0.651162, -0.751437, 0.0946817, 1.02719, 0.276823)
+
+[node name="beet" parent="stallRed" instance=ExtResource("9_y6p38")]
+transform = Transform3D(0.85115, 0.522294, 0.0524633, 0, 0.0999449, -0.994993, -0.524922, 0.846889, 0.0850681, -0.00956821, 0.951828, -0.533591)
+
+[node name="beet2" parent="stallRed" instance=ExtResource("9_y6p38")]
+transform = Transform3D(0.149048, -0.987437, 0.0524633, 0.0920331, -0.0389729, -0.994993, 0.984538, 0.15313, 0.0850681, 0.0566583, 0.946368, -0.638293)
+
+[node name="beet3" parent="stallRed" instance=ExtResource("9_y6p38")]
+transform = Transform3D(-0.543646, -0.837674, 0.0524633, 0.042999, -0.0902223, -0.994993, 0.838213, -0.538668, 0.0850681, 0.00712776, 0.967745, -0.357716)
+
+[node name="Player" parent="." instance=ExtResource("1_7q53d")]
+transform = Transform3D(0.699601, 0, 0.714534, 0, 1, 0, -0.714534, 0, 0.699601, 0.0398874, 0, 0.0647266)
+
+[node name="FruitShopKeeper" parent="." instance=ExtResource("11_jesw1")]
+transform = Transform3D(0.736476, 0, 0.789939, 0, 1.08, 0, -0.789939, 0, 0.736476, -5.49673, -2.38419e-07, -5.18424)
+
+[node name="Body1" parent="FruitShopKeeper" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a1he1")
+
+[node name="Head1" parent="FruitShopKeeper" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c8od8")
+
+[node name="ArmLeft1" parent="FruitShopKeeper" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a1he1")
+
+[node name="ArmRight1" parent="FruitShopKeeper" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a1he1")
+
+[node name="LegLeft1" parent="FruitShopKeeper" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a1he1")
+
+[node name="LegRight1" parent="FruitShopKeeper" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a1he1")
+
+[editable path="FruitShopKeeper"]
